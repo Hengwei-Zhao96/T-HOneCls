@@ -1,0 +1,30 @@
+config = dict(
+    dataset=dict(
+        train=dict(
+            type='LongKouDataset',
+            params=dict(
+                image_path='./Data/UAVData/WHU-Hi-LongKou/WHU-Hi-LongKou',
+                gt_path='./Data/UAVData/WHU-Hi-LongKou/LKTrain100',
+                train_flage=True,
+                num_positive_train_samples=100,
+                sub_minibatch=10,
+                ccls=7,
+                ratio=40
+            )
+        ),
+        test=dict(
+            type='LongKouDataset',
+            params=dict(
+                image_path='./Data/UAVData/WHU-Hi-LongKou/WHU-Hi-LongKou',
+                gt_path='./Data/UAVData/WHU-Hi-LongKou/LKTest100',
+                train_flage=False,
+                num_positive_train_samples=100,
+                sub_minibatch=10,
+                ccls=7,
+                ratio=40
+            )
+        )
+    ),
+
+    meta=dict(),
+)

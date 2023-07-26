@@ -1,0 +1,6 @@
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/open_set_classification/POOD_Detector/KLMatching/HanChuan_patch.py'
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/open_set_classification/POOD_Detector/KLMatching/HongHu_patch.py'
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/open_set_classification/POOD_Detector/KLMatching/Indian_Pines_patch.py'
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/open_set_classification/POOD_Detector/KLMatching/LongKou_patch.py'
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/open_set_classification/POOD_Detector/KLMatching/PaviaU_patch.py'
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/open_set_classification/POOD_Detector/KLMatching/Salinas_patch.py'
