@@ -6,7 +6,7 @@ import torch
 from tqdm import tqdm
 
 from HOC.apis import BaseTrainer
-from HOC.apis.validation import fcn_evaluate_fn, mcc_fcn_evaluate_fn, os_mcc_fcn_evaluate_fn
+from HOC.apis.validation import fcn_evaluate_fn
 from HOC.datasets import build_dataloader
 from HOC.loss_functions import build_loss_function
 from HOC.models import build_model
