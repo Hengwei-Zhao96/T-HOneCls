@@ -1,4 +1,3 @@
-import copy
 import numpy as np
 import PIL.Image as Image
 
@@ -24,10 +23,3 @@ def classmap2rgbmap(classmap: np.ndarray, palette, cls):
     rgb = Image.merge("RGB", (r, g, b))
 
     return rgb
-
-
-def palette_class_mapping(classification_map, mapping_dict):
-    new_map = copy.deepcopy(classification_map)
-    for k, v in mapping_dict.items():
-        new_map[classification_map == k] = v
-    return new_map

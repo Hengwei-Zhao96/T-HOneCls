@@ -11,9 +11,7 @@ from HOC.utils import set_random_seed
 
 def Argparse():
     parser = argparse.ArgumentParser(description='HOC Training')
-    parser.add_argument('-c', '--cfg', type=str,
-                        default='/home/zhw2021/code/HOneCls/configs/open_set_classification/DS3L/PaviaU_patch_detection.py',
-                        help='File path of config')
+    parser.add_argument('-c', '--cfg', type=str, help='File path of config')
     parser.add_argument('-r', '--random_seed', type=int, default=None, help='Random seed')
     return parser.parse_args()
 

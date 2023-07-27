@@ -38,13 +38,6 @@ class BaseTrainer(ABC):
                                        self.cfg_trainer['type'],
                                        self.cfg_model['type'],
                                        str(self.cfg_dataset['train']['params']['ccls']))
-        # elif self.cfg_trainer['type'] == 'CoTeachingTrainer':
-        #     folder_name = os.path.join(os.path.abspath('.'),
-        #                                'log',
-        #                                self.cfg_dataset['train']['type'],
-        #                                self.cfg_trainer['type'],
-        #                                self.cfg_model['type'],
-        #                                str(self.cfg_dataset['train']['params']['ccls']))
         elif self.cfg_trainer['type'] in ['MccSingleModelTrainer', 'OsMccSingleModelTrainer',
                                           'MccSingleModelTrainer_PB', 'OsCACLossTrainer_PB',
                                           'OsIILossTrainer_PB', 'OsSelfCalibrationTrainer', 'OsDS3LTrainer_PB']:

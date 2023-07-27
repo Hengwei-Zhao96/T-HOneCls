@@ -13,9 +13,7 @@ from HOC.models import build_model
 from HOC.optimization import build_optimizer
 from HOC.optimization import build_lr_scheduler
 from HOC.apis.toolkit_self_calibration.kl_loss import KLLoss
-from HOC.apis.toolkit_self_calibration.l2_loss import L2Loss
 from HOC.apis.toolkit_self_calibration.update_ema_model import update_ema_variables
-# from HOC.apis.toolkit_self_calibration.update_ema_label import update_ema_labels
 from HOC.utils import TRAINER
 
 
@@ -91,23 +89,12 @@ class SelfCalibrationTrainer(BaseTrainer):
             with torch.no_grad():
                 target_t = self.model_t(data)
 
-            # if self.cfg_trainer['params']['ema_label']:
-            #     self.ema_label = update_ema_labels(unlabeled_mask=unlabeled_train_mask,
-            #                                        ema_label=self.ema_label,
-            #                                        target_t=target_t,
-            #                                        alpha=self.cfg_trainer['params']['ema_label_alpha'],
-            #                                        warm_up_epoch=self.cfg_trainer['params']['ema_label_warm_up_epoch'],
-            #                                        epoch=epoch)
-            #     loss_s, p_loss_s, u_loss_s = self.loss_function_s(target_s, positive_train_mask, unlabeled_train_mask,
-            #                                                       self.ema_label, epoch, self.device)
-            # else:
             loss_s, p_loss_s, u_loss_s = self.loss_function_s(target_s, positive_train_mask, unlabeled_train_mask,
                                                               epoch, self.device)
 
             loss_t = KLLoss(equal_weight=False)(target_s, target_t, positive_train_mask, unlabeled_train_mask)
-            # loss_t = L2Loss(equal_weight=False)(target_s, target_t, positive_train_mask, unlabeled_train_mask)
 
-            loss_s_t = loss_s + self.cfg_trainer['params']['beta']*loss_t
+            loss_s_t = loss_s + self.cfg_trainer['params']['beta'] * loss_t
 
             self.optimizer_s.zero_grad()
             loss_s_t.backward()
@@ -120,8 +107,6 @@ class SelfCalibrationTrainer(BaseTrainer):
                                  alpha=self.cfg_trainer['params']['ema_model_alpha'],
                                  global_step=epoch)
 
-
-
             epoch_loss_s += loss_s.item()
             epoch_p_loss_s += p_loss_s.item()
             epoch_u_loss_s += u_loss_s.item()
@@ -130,10 +115,6 @@ class SelfCalibrationTrainer(BaseTrainer):
             num_iter += 1
 
         self.lr_scheduler_s.step()
-
-        # update_ema_variables(model=self.model_s, ema_model=self.model_t,
-        #                      alpha=self.cfg_trainer['params']['ema_model_alpha'],
-        #                      global_step=epoch)
 
         self.loss_recorder_s.update_scalar(epoch_loss_s / num_iter)
         self.p_loss_recorder_s.update_scalar(epoch_p_loss_s / num_iter)
