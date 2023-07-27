@@ -1,26 +1,26 @@
 config = dict(
     dataset=dict(
         train=dict(
-            type='HongHuDataset',
+            type='HanChuanDataset',
             params=dict(
-                image_path='./Data/UAVData/WHU-Hi-HongHu/data',
-                gt_path='./Data/UAVData/WHU-Hi-HongHu/gt',
+                image_path='./Data/UAVData/WHU-Hi-HanChuan/WHU-Hi-HanChuan',
+                gt_path='./Data/UAVData/WHU-Hi-HanChuan/Train100',
                 train_flage=True,
                 num_positive_train_samples=100,
                 sub_minibatch=10,
-                ccls=6,
+                ccls=16,
                 ratio=40
             )
         ),
         test=dict(
-            type='HongHuDataset',
+            type='HanChuanDataset',
             params=dict(
-                image_path='./Data/UAVData/WHU-Hi-HongHu/data',
-                gt_path='./Data/UAVData/WHU-Hi-HongHu/gt',
+                image_path='./Data/UAVData/WHU-Hi-HanChuan/WHU-Hi-HanChuan',
+                gt_path='./Data/UAVData/WHU-Hi-HanChuan/Test100',
                 train_flage=False,
                 num_positive_train_samples=100,
                 sub_minibatch=10,
-                ccls=6,
+                ccls=16,
                 ratio=40
             )
         )
@@ -28,7 +28,7 @@ config = dict(
     model=dict(
         type='FreeOCNet',
         params=dict(
-            in_channels=270,
+            in_channels=274,
             num_classes=1,
             block_channels=(64, 128, 192, 256),
             num_blocks=(1, 1, 1, 1),
@@ -39,13 +39,13 @@ config = dict(
     loss_function=dict(
         type='TaylorVarPULossPf',
         params=dict(
-            order=2,
+            order=2
         ),
     ),
     optimizer=dict(
         type='SGD',
         params=dict(
-            lr=0.0001,
+            lr=0.0002,
             momentum=0.9,
             weight_decay=0.0001
         ),
@@ -58,38 +58,32 @@ config = dict(
     trainer=dict(
         type='SelfCalibrationTrainer',
         params=dict(
-            max_iters=150,
+            max_iters=170,
             clip_grad=6,
-            beta=0.5,
+            beta=0.2,
             ema_model_alpha=0.99
         ),
     ),
     meta=dict(
-        save_path='Log/T-HOneCls//order=2-l2',
-        image_size=(678, 465),
+        save_path='Log/T-HOneCls',
+        image_size=(1217, 303),
         palette=[
             [0, 0, 0],
-            [255, 0, 0],
-            [255, 255, 255],
             [176, 48, 96],
-            [255, 255, 0],
-            [255, 127, 80],
-            [0, 255, 0],
-            [0, 205, 0],
-            [0, 139, 0],
-            [127, 255, 212],
-            [160, 32, 240],
-            [216, 191, 216],
-            [0, 0, 255],
-            [0, 0, 139],
-            [218, 112, 214],
-            [160, 82, 45],
             [0, 255, 255],
-            [255, 165, 0],
+            [255, 0, 255],
+            [160, 32, 240],
+            [127, 255, 212],
             [127, 255, 0],
-            [139, 139, 0],
-            [0, 139, 139],
-            [205, 181, 205],
-            [238, 154, 0]],
-    )
+            [0, 205, 0],
+            [0, 255, 0],
+            [0, 139, 0],
+            [255, 0, 0],
+            [216, 191, 216],
+            [255, 127, 80],
+            [160, 82, 45],
+            [255, 255, 255],
+            [218, 112, 214],
+            [0, 0, 255]],
+    ),
 )

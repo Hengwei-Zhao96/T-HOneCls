@@ -1,0 +1,4 @@
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/LongKou/T-HOneCls/1.py'
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/LongKou/T-HOneCls/3.py'
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/LongKou/T-HOneCls/4.py'
+CUDA_VISIBLE_DEVICES=1 python tools/train.py -c 'configs/LongKou/T-HOneCls/6.py'

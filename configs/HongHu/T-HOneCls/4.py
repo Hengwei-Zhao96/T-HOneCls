@@ -8,7 +8,7 @@ config = dict(
                 train_flage=True,
                 num_positive_train_samples=100,
                 sub_minibatch=10,
-                ccls=18,
+                ccls=4,
                 ratio=40
             )
         ),
@@ -20,7 +20,7 @@ config = dict(
                 train_flage=False,
                 num_positive_train_samples=100,
                 sub_minibatch=10,
-                ccls=18,
+                ccls=4,
                 ratio=40
             )
         )
@@ -65,7 +65,7 @@ config = dict(
         ),
     ),
     meta=dict(
-        save_path='Log/T-HOneCls/2',
+        save_path='Log/T-HOneCls',
         image_size=(678, 465),
         palette=[
             [0, 0, 0],

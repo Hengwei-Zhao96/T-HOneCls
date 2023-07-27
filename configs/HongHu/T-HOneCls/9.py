@@ -8,7 +8,7 @@ config = dict(
                 train_flage=True,
                 num_positive_train_samples=100,
                 sub_minibatch=10,
-                ccls=11,
+                ccls=9,
                 ratio=40
             )
         ),
@@ -20,7 +20,7 @@ config = dict(
                 train_flage=False,
                 num_positive_train_samples=100,
                 sub_minibatch=10,
-                ccls=11,
+                ccls=9,
                 ratio=40
             )
         )
@@ -37,13 +37,9 @@ config = dict(
         )
     ),
     loss_function=dict(
-        type='OCLossPf',
+        type='TaylorVarPULossPf',
         params=dict(
-            prior=0.06398537477148081,
-            class_weight=0.3,
-            focal_weight=0.1,
-            loss='sigmoid',
-            warm_up_epoch=20
+            order=2,
         ),
     ),
     optimizer=dict(
@@ -60,10 +56,12 @@ config = dict(
             gamma=0.995),
     ),
     trainer=dict(
-        type='SingleModelTrainer',
+        type='SelfCalibrationTrainer',
         params=dict(
             max_iters=150,
-            clip_grad=None,
+            clip_grad=6,
+            beta=0.5,
+            ema_model_alpha=0.99
         ),
     ),
     meta=dict(

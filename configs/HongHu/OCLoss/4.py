@@ -62,7 +62,7 @@ config = dict(
     trainer=dict(
         type='SingleModelTrainer',
         params=dict(
-            max_iters=10,#150
+            max_iters=150,
             clip_grad=None,
         ),
     ),
