@@ -1,6 +1,0 @@
-CUDA_VISIBLE_DEVICES=2 python tools/train.py -c 'configs/HanChuan/T-HOneCls/1.py'
-CUDA_VISIBLE_DEVICES=2 python tools/train.py -c 'configs/HanChuan/T-HOneCls/2.py'
-CUDA_VISIBLE_DEVICES=2 python tools/train.py -c 'configs/HanChuan/T-HOneCls/3.py'
-CUDA_VISIBLE_DEVICES=2 python tools/train.py -c 'configs/HanChuan/T-HOneCls/6.py'
-CUDA_VISIBLE_DEVICES=2 python tools/train.py -c 'configs/HanChuan/T-HOneCls/14.py'
-CUDA_VISIBLE_DEVICES=2 python tools/train.py -c 'configs/HanChuan/T-HOneCls/16.py'

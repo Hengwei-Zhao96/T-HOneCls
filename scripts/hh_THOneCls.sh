@@ -1,5 +1,0 @@
-CUDA_VISIBLE_DEVICES=0 python tools/train.py -c 'configs/HongHu/T-HOneCls/4.py'
-CUDA_VISIBLE_DEVICES=0 python tools/train.py -c 'configs/HongHu/T-HOneCls/6.py'
-CUDA_VISIBLE_DEVICES=0 python tools/train.py -c 'configs/HongHu/T-HOneCls/7.py'
-CUDA_VISIBLE_DEVICES=0 python tools/train.py -c 'configs/HongHu/T-HOneCls/9.py'
-CUDA_VISIBLE_DEVICES=0 python tools/train.py -c 'configs/HongHu/T-HOneCls/10.py'
