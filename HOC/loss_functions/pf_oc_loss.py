@@ -23,7 +23,7 @@ class OCLossPf(nn.Module):
         p_weight = torch.pow((torch.ones_like(pred) - torch.clamp(torch.sigmoid(pred), min=0, max=0.999)),
                              self.focal_weight)
 
-        if epoch < self.warm_up_epoch:
+        if epoch < self.warm_up_epoch:#123
             self.loss = 'bce'
         else:
             self.loss = self.saved_loss
