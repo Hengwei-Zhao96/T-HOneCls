@@ -23,7 +23,7 @@ class OCLossPf(nn.Module):
         p_weight = torch.pow((torch.ones_like(pred) - torch.clamp(torch.sigmoid(pred), min=0, max=0.999)),
                              self.focal_weight)
 
-        if epoch < self.warm_up_epoch:#123
+        if epoch < self.warm_up_epoch:
             self.loss = 'bce'
         else:
             self.loss = self.saved_loss
@@ -37,7 +37,10 @@ class OCLossPf(nn.Module):
         else:
             raise NotImplemented
 
-        positive_n_loss = unlabeled_loss * positive_mask
+        if self.loss == 'sigmoid':
+            positive_n_loss = unlabeled_loss * positive_mask
+        elif self.loss == 'bce':
+            positive_n_loss = bce_loss(pred, positive_mask, positive=False) * positive_mask
         unlabeled_n_loss = unlabeled_loss * unlabeled_mask
 
         estimated_p_loss = positive_p_loss.sum() / positive_mask.sum()
