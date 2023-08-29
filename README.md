@@ -7,7 +7,7 @@ Xinyu Wang,
 and <a href="http://rsidea.whu.edu.cn/">Yanfei Zhong</a>
 </h5>
 
-[[`Arxiv(soon)`](https://ww)]
+[[`arXiv(soon)`](https://ww)]
 [[`Paper(ICCV 2023) (soon)`](https://ww)]
 
 ---------------------
