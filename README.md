@@ -8,7 +8,7 @@ and <a href="http://rsidea.whu.edu.cn/">Yanfei Zhong</a>
 </h5>
 
 [[`arXiv`](https://arxiv.org/abs/2308.15081)]
-[[`Paper(ICCV 2023) (soon)`](https://ww)]
+[[`Paper(ICCV 2023)`](https://openaccess.thecvf.com/content/ICCV2023/papers/Zhao_Class_Prior-Free_Positive-Unlabeled_Learning_with_Taylor_Variational_Loss_for_Hyperspectral_ICCV_2023_paper.pdf)]
 
 ---------------------
 
@@ -36,15 +36,14 @@ sh scripts/HanChuan.sh
 ## Citation
 If you use _T-HOneCls_ in your research, please cite the following paper:
 ```text
-@INPROCEEDINGS{thonecls,
-    author={Zhao, Hengwei and Wang, Xinyu and Li, Jingtao and Zhong, Yanfei},
-    booktitle={2023 IEEE/CVF International Conference on Computer Vision (ICCV)}, 
-    title={Class Prior-Free Positive-Unlabeled Learning with Taylor Variational Loss for Hyperspectral Remote Sensing Imagery}, 
-    year={2023},
-    volume={},
-    number={},
-    pages={},
-    doi={}}
+@InProceedings{Zhao_2023_ICCV,
+    author    = {Zhao, Hengwei and Wang, Xinyu and Li, Jingtao and Zhong, Yanfei},
+    title     = {Class Prior-Free Positive-Unlabeled Learning with Taylor Variational Loss for Hyperspectral Remote Sensing Imagery},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2023},
+    pages     = {16827-16836}
+}
 
 @article{ZHAO2022328,
     title = {Mapping the distribution of invasive tree species using deep one-class classification in the tropical montane landscape of Kenya},
