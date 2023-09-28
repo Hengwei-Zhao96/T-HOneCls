@@ -42,8 +42,7 @@ If you use _T-HOneCls_ in your research, please cite the following paper:
     booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
     month     = {October},
     year      = {2023},
-    pages     = {16827-16836}
-}
+    pages     = {16827-16836}}
 
 @article{ZHAO2022328,
     title = {Mapping the distribution of invasive tree species using deep one-class classification in the tropical montane landscape of Kenya},
@@ -54,8 +53,7 @@ If you use _T-HOneCls_ in your research, please cite the following paper:
     issn = {0924-2716},
     doi = {https://doi.org/10.1016/j.isprsjprs.2022.03.005},
     url = {https://www.sciencedirect.com/science/article/pii/S0924271622000715},
-    author = {Hengwei Zhao and Yanfei Zhong and Xinyu Wang and Xin Hu and Chang Luo and Mark Boitt and Rami Piiroinen and Liangpei Zhang and Janne Heiskanen and Petri Pellikka}
-}
+    author = {Hengwei Zhao and Yanfei Zhong and Xinyu Wang and Xin Hu and Chang Luo and Mark Boitt and Rami Piiroinen and Liangpei Zhang and Janne Heiskanen and Petri Pellikka}}
 
 @ARTICLE{10174705,
     author={Zhao, Hengwei and Zhong, Yanfei and Wang, Xinyu and Shu, Hong},
