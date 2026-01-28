@@ -22,7 +22,7 @@ This is an official implementation of _T-HOneCls_ in our ICCV 2023 paper.
 - pytorch >= 1.13.1
 - GDAL ==3.4.1
 
-## Running
+## Running:
 1.Modify the data path in the configuration file (./configs/X/XX/XXX.py).
 The hyperspectral data can be obtained from the [`Link`](https://pan.baidu.com/s/1Ac3ko3BcZ4sS_cmzZhA7ow?pwd=sqyy )(password:sqyy)
 
@@ -33,7 +33,7 @@ sh scripts/LongKou.sh
 sh scripts/HanChuan.sh
 ```
 
-## Citation
+## Citation:
 If you use _T-HOneCls_ in your research, please cite the following paper:
 ```text
 @InProceedings{Zhao_2023_ICCV,
